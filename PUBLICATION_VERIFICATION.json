@@ -1,0 +1,114 @@
+{
+  "status": "pass",
+  "work": [
+    "paper2"
+  ],
+  "files_verified": 371,
+  "regenerated_assets_equal": true,
+  "built_text_equal": true,
+  "scope": "Saved-result asset regeneration, algebra checks, and PDF build; not a new full scientific scan",
+  "tools": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/chris/Documents/rdt_related_repos/whitedwarfs_code/reproduction/2026_june_14_make_it_consistent/step21_tools/execute.py",
+        "script",
+        "paper2_WhiteDwarfs/wd_step12/figures.py",
+        "--output",
+        "/private/tmp/wd-public-release-check/wd"
+      ],
+      "pid": 63668,
+      "nice": 19,
+      "returncode": 0,
+      "wall_seconds": 7.062378041999182,
+      "cpu_seconds": 6.6232429999999995,
+      "average_CPU_fraction": 0.937820513233971,
+      "wall_duty_target": 0.94,
+      "one_child_at_a_time": true
+    },
+    {
+      "command": [
+        "/Library/TeX/texbin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "pid": 63731,
+      "nice": 19,
+      "returncode": 0,
+      "wall_seconds": 0.42036033399926964,
+      "cpu_seconds": 0.3055880000000001,
+      "average_CPU_fraction": 0.7269667836940367,
+      "wall_duty_target": 0.94,
+      "one_child_at_a_time": true
+    },
+    {
+      "command": [
+        "/Library/TeX/texbin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "pid": 63732,
+      "nice": 19,
+      "returncode": 0,
+      "wall_seconds": 0.41847245899407426,
+      "cpu_seconds": 0.30729999999999963,
+      "average_CPU_fraction": 0.7343374537447185,
+      "wall_duty_target": 0.94,
+      "one_child_at_a_time": true
+    },
+    {
+      "command": [
+        "/opt/homebrew/bin/pdftotext",
+        "/private/tmp/wd-public-release-check/paper2/main.pdf",
+        "/private/tmp/wd-public-release-check/paper2/text.txt"
+      ],
+      "pid": 63733,
+      "nice": 19,
+      "returncode": 0,
+      "wall_seconds": 0.09958087500126567,
+      "cpu_seconds": 0.02494000000000049,
+      "average_CPU_fraction": 0.2504496972906043,
+      "wall_duty_target": 0.94,
+      "one_child_at_a_time": true
+    },
+    {
+      "command": [
+        "/opt/homebrew/bin/pdftotext",
+        "/Users/chris/Documents/rdt_related_repos/whitedwarfs_code/reproduction/output/pdf/publication/paper2/merrill_white_dwarf_stars_v6.pdf",
+        "/private/tmp/wd-public-release-check/paper2/reference.txt"
+      ],
+      "pid": 63734,
+      "nice": 19,
+      "returncode": 0,
+      "wall_seconds": 0.09635925000475254,
+      "cpu_seconds": 0.026571000000000067,
+      "average_CPU_fraction": 0.27574934423721187,
+      "wall_duty_target": 0.94,
+      "one_child_at_a_time": true
+    }
+  ],
+  "supervisor_resource": {
+    "pid": 63659,
+    "nice": 19,
+    "worker_processes": 1,
+    "cpu_fraction_target": 0.95,
+    "cpu_quantum_seconds": 0.01,
+    "wall_seconds": 8.131921708998561,
+    "cpu_seconds": 0.040823000000000005,
+    "measured_cpu_fraction": 0.005020092600599732,
+    "throttle_sleeps": 2,
+    "throttle_sleep_seconds": 0.0012600303672868126,
+    "native_thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1"
+    }
+  },
+  "capsule_sha256": "39ed061a84c44d16321724b634880c61ebf8d7a553c75c701a8e21756ca55605",
+  "paper2_pdf_sha256": "c5ca00dabdbf3ec5f88de0e86e25db88f90bbe0a1e9cf49e1f6bb1233ddfe73a"
+}

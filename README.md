@@ -1,62 +1,48 @@
-# WhiteDwarfs V5 — White dwarf signatures of Radial Dimensionality Theory
+# White Dwarfs — Paper II v6
 
-Code for **Radial Dimensionality Theory II: White Dwarf Structure under
-Solar-Constrained Density-Dependent Dimensionality**
-(C. K. Merrill and Claude, 2026).
+Producing scripts, inputs, saved results and numerical controls for
+**Radial Dimensionality Theory II: White Dwarf Structure under Solar-Constrained
+Density-Dependent Dimensionality**.
 
-This package applies the RDT opening law and exact modified Lane–Emden
-equation of Paper I (see the companion `solarcore_code` repository) to
-non-relativistic n = 3/2 white dwarfs with the physical degenerate-electron
-polytropic constant (μ_e = 2), and computes the maximum structural
-signatures allowed by Paper I's solar bound. Headline result: a radius
-**deficit** at fixed mass of |ΔR/R| ≤ 9.5×10⁻³ across M ≈ 0.16–0.86 M_⊙,
-nearly mass-independent — at the precision frontier of eclipsing-binary
-mass–radius measurements.
+Source release: `paper2-v6-publication-2026-11-12`.
 
-## Requirements
+- [Paper](reproduction/output/pdf/publication/paper2/merrill_white_dwarf_stars_v6.pdf)
+- [Manuscript](reproduction/paper2_WhiteDwarfs/V5_Paper/main.tex)
+- [Current calculation and figure generation](reproduction/paper2_WhiteDwarfs/wd_step12/README.md)
 
-Python ≥ 3.10 with `numpy`, `scipy`, `matplotlib`.
+## Reproduce the paper
 
-## Files
-
-| File | Purpose |
-|---|---|
-| `model.py` | Physics: RDT opening law, exact modified Lane–Emden ODE (n = 3/2), physical polytropic constant, white dwarf builder `build_wd(params, rho_c)` → (M, R), and `mr_pair` for standard/modified comparisons at fixed central density. |
-| `validate.py` | Validation gates. **Run this first.** A=0 regression (ξ₁ = 3.653754, ω = 2.71406), analytic scalings (R ∝ ρ_c^(−1/6), M ∝ ρ_c^(1/2)), physical sanity (ρ_c = 10⁶ g/cm³ → R = 1.12×10⁹ cm, M = 0.50 M_⊙), start-inside-the-star check, cgs/SI unit invariance, fiducial sanity. Gates 2–4 regress directly against the failure modes of the superseded V4 code. |
-| `predict.py` | Computes fixed-mass radius shifts for parameters on Paper I's combined 95% CL exclusion boundary A₉₅(α) — the largest solar-allowed signatures. Writes `results_predictions.csv` and `figures/fig_dR_bands.pdf`, and prints the paper-numbers block. ~1 min. |
-| `results_predictions.csv` | Prediction output behind the published numbers (included for reproducibility). |
-
-## Usage
-
-Run single-threaded (numpy/BLAS gains nothing at these sizes and will
-otherwise occupy every core):
+Requires Python 3.14, NumPy 2.4.2, SciPy 1.17.1, Matplotlib 3.10.8,
+TeX Live with revtex4-2, and Poppler. The resource controller uses POSIX
+nice/setpriority, SIGPROF and SIGSTOP/SIGCONT.
 
 ```sh
-export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-       VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1
-
-# 1. Validation gates — all must PASS before trusting any physics output
-python3 validate.py
-
-# 2. Predictions along the solar exclusion boundary (~1 min)
-python3 predict.py
+git clone https://github.com/chrismerrill1974/whitedwarfs_code.git
+cd whitedwarfs_code
+git checkout paper2-v6-publication-2026-11-12
+nice -n 19 python3 reproduce.py --output /tmp/whitedwarfs-reproduction
 ```
 
-`predict.py` prints every number quoted in the paper and regenerates the
-paper figure.
+The output directory must not exist. The command verifies every capsule hash,
+regenerates the figure and table from saved results, and builds a PDF whose
+extracted text matches the included paper. PNG figures and numerical tables
+match byte-for-byte; PDF creation metadata may differ. No parameter scan is
+launched by this command. `release.json` identifies the paper and
+`reproduction/CAPSULE.json` records the scientific file checksums.
 
-## Notes
+Full scans use `reproduction/paper2_WhiteDwarfs/wd_step12/propagate.py` and
+its pinned solar inputs. Use one worker, verified nice priority 19, a maximum
+of 95% of one CPU, and one native-library thread. Numerical evidence includes
+resource measurements and failure records.
 
-- Validity range: ρ_c ∈ [10⁵, 3×10⁶] g/cm³ (non-relativistic electrons;
-  M ≈ 0.16–0.86 M_⊙). The n = 3/2 polytrope has no maximum mass, so this
-  code makes **no** Chandrasekhar-mass statements (see Paper III for the
-  relativistic regime).
-- The observable convention is radius at fixed mass:
-  Δln R|_M = Δln R|_ρc + (1/3)·Δln M|_ρc.
-- The A₉₅(α) boundary values are hard-coded in `predict.py` from the
-  Paper I analysis (solarcore_code/analyze.py output, 2026-06-10).
-- All results are unit-invariant (gate 5 verifies cgs ↔ SI).
+## Scientific scope and historical calculations
 
-## License
+The results describe sampled polytropic models within the stated equation-of-state
+limits; they do not establish general predictions for realistic white dwarfs.
+Shared scientific scripts, inputs and results are included so no sibling checkout
+is needed. This repository's supported paper build is Paper II.
 
-MIT — see [LICENSE](LICENSE).
+Top-level `model.py`, `predict.py`, `validate.py` and `results_predictions.csv`
+retain the original calculation. The revised calculation uses the audited flux
+solver under `reproduction/paper2_WhiteDwarfs/audit_2026_11_11` and the propagation
+and figures under `reproduction/paper2_WhiteDwarfs/wd_step12`.

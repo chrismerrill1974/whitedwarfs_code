@@ -1,0 +1,15 @@
+{
+  "tag": "paper2-v6-publication-2026-11-12",
+  "works": [
+    "paper2"
+  ],
+  "repository": "https://github.com/chrismerrill1974/whitedwarfs_code",
+  "scientific_input_commit": "f4cff7fbcbd795e876c2e0232dbde5a73637a9d7",
+  "capsule_sha256": "39ed061a84c44d16321724b634880c61ebf8d7a553c75c701a8e21756ca55605",
+  "manuscripts": {
+    "paper2": "reproduction/paper2_WhiteDwarfs/V5_Paper/main.tex"
+  },
+  "pdfs": {
+    "paper2": "reproduction/output/pdf/publication/paper2/merrill_white_dwarf_stars_v6.pdf"
+  }
+}

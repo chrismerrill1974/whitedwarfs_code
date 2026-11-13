@@ -1,0 +1,387 @@
+\documentclass[twocolumn,prd,superscriptaddress,nofootinbib]{revtex4-2}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Radial Dimensionality Theory II: White Dwarf Structure under Solar-Constrained Density-Dependent Dimensionality}
+\author{Christopher K. Merrill}
+\affiliation{Independent Researcher}
+
+\author{Claude (Anthropic)}
+\affiliation{Large Language Model, Computational Collaboration}
+
+\author{Astra (Open AI)}
+\affiliation{Large Language Model, Computational Collaboration}
+
+\date{Consistency revision: November 12, 2026}
+
+\begin{abstract}
+We propagate the revised nominal solar parameter sets of Paper~I through
+an audited $n=3/2$, $\mu_e=2$ white-dwarf polytropic prescription. The
+source-precision solar-a score has a sampled amplitude envelope .00874717,
+locally refined to .00875020; these are conditional model/proxy thresholds,
+not calibrated observational confidence bounds. We evaluate 66 exponent/
+boundary points, 12 central densities and five amplitude fractions within
+each nominal slice, totaling 3960 models. The largest sampled exact
+fixed-mass radius deficit is .954933\%, at comparison mass
+$M_A=.848321M_\odot$, $\alpha=.5$, $A=.00673493$ and
+$\rho_c=3\times10^6~{\rm g\,cm^{-3}}$. This high-density point lies beyond
+the non-relativistic EOS applicability estimate and is a mathematical
+polytrope comparison. The figure uses the actual comparison mass and
+$\exp(\Delta\ln R)-1$, rather than a baseline mass label and log shift.
+The sampled response decreases with amplitude but does not certify a
+global continuum envelope or universal contraction. Earlier V4 numerical
+results remain superseded; realistic stellar responses and measurement
+systematics are needed for quantitative empirical white-dwarf constraints.
+
+\end{abstract}
+
+\maketitle
+
+\section*{Version note: v6}
+This version retains the published title. It propagates the revised solar parameter sets and corrects the fixed-mass comparison and exact percentage shifts. The results describe sampled polytropic white-dwarf models within the stated equation-of-state limits; they do not establish general predictions for realistic white dwarfs.
+
+
+\noindent\textbf{Scope.}
+$A_{\Delta Q=2.71}(\alpha)$ denotes Paper~I's nominal fixed-exponent endpoint,
+with $\rho_0=150~{\rm g\,cm^{-3}}$ and the solar-a reference prescription.
+Its sampled/local maxima .00874717/.00875020 have no calibrated confidence
+coverage. The asymptote associated with the latter is approximately 2.97375;
+finite-density dimensions require the full law. The same input parameters
+specify this white-dwarf model without retuning, but do not establish the
+accuracy of its EOS or modified response. Empirical tests of a specified
+phenomenological model do not require external endorsement.
+
+\section{Introduction}
+%============================================================================
+
+Paper~I of this series \cite{PaperI} formulated Radial Dimensionality
+Theory (RDT) as a phenomenological law in which the effective spatial
+dimensionality felt by the gravitational field decreases weakly with local
+density,
+\begin{equation}
+\begin{gathered}
+d_{\rm eff}(\rho)=3\,\Omega(\rho),\quad
+\Omega(\rho)=1-A\,\frac{x}{1+x},\\
+x=\left(\frac{\rho}{\rho_0}\right)^{\!\alpha}.
+\end{gathered}
+\label{eq:law}
+\end{equation}
+with $\rho_0 = 150~{\rm g\,cm^{-3}}$ fixed as a series convention, and
+derived the corresponding exact modified Lane--Emden equation with the
+modification confined to the gravitational divergence operator. Confronting
+solar neutrino fluxes and a helioseismic proxy bound, Paper~I found only a small combined-score improvement over the null and
+obtained a nominal sampled/local amplitude envelope
+\begin{equation}
+A_{\rm sampled}=.00874717,\quad A_{\rm local}\simeq.00875020,
+\label{eq:solarbound}
+\end{equation}
+for sampled exponents $\alpha\in[.02,.5]$, without confidence coverage. The associated high-density asymptote is approximately 2.97375.
+
+This paper asks what that bound permits in the next density regime:
+white dwarfs, with central densities $\rho_c \sim 10^5$--$10^6~{\rm
+g\,cm^{-3}}$, three to four orders of magnitude beyond the solar core.
+Because the law of Eq.~(\ref{eq:law}) is a function of density alone, the
+solar constraint propagates to white dwarfs with \emph{no retuning}: each
+chosen parameter point specifies a white-dwarf calculation under the
+adopted polytropic assumptions. We sample each nominal slice at five amplitude fractions, including its endpoint; a global continuum envelope still requires a separate domain check.
+
+This version supersedes an earlier analysis (V4) of white dwarfs in this
+series. As documented in Sec.~\ref{sec:v4}, the V4 numerical
+implementation was invalid, and its modification ansatz differed from the
+operator form adopted by the series; neither its quantitative predictions
+(percent-level radius \emph{increases}) nor its Chandrasekhar-mass shifts
+survive. The retained operator calculation gives radius \emph{deficits}
+near one percent at fixed mass in the sampled polytropes; the numerical
+audit below supports those samples, not a global observational bound.
+
+%============================================================================
+\section{Framework}
+%============================================================================
+
+\subsection{Modified structure equation}
+
+Following Paper~I, physical space remains three-dimensional for volume
+elements, mass integrals, and microphysics; only the gravitational
+divergence operator carries $d_{\rm eff}$, with reference scale
+$r_\star = a$ (the Lane--Emden length) so that the model is
+unit-invariant. This fixes a physical prescription: changing $r_\star$
+at fixed stellar structure would change the variable-$\delta$ operator.
+The length $a$ is spatially constant for each solution but changes with
+$\rho_c$ across the family. Density here is Newtonian matter mass per
+ordinary three-dimensional volume. For a polytrope $P = K\rho^{1+1/n}$, $\rho = \rho_c
+\theta^n$, $\xi = r/a$, the exact structure equation is
+\begin{equation}
+\theta'' + \left[\frac{2+\delta(\xi)}{\xi}
++ \frac{d\delta}{d\xi}\ln\xi\right]\theta' + \theta^{n} = 0,
+\label{eq:mle}
+\end{equation}
+with $\delta = 3[\Omega(\rho_c\theta^n) - 1] \le 0$ and
+$d\delta/d\xi = (d\delta/d\theta)\,\theta'$, and the regular center
+condition $\theta \simeq 1 - \xi^2/(2[3+\delta_0])$. Equation~(\ref{eq:mle})
+is the same equation solved in Paper~I; only the polytropic index and the
+scale relations differ.
+
+\subsection{White dwarf model and validity range}
+
+Cold, non-relativistic degenerate matter gives an $n = 3/2$ polytrope
+with the physical constant
+\begin{equation}
+P = K\rho^{5/3}, \qquad
+K = \frac{1.0036\times10^{13}}{\mu_e^{5/3}}~\text{(cgs)},
+\end{equation}
+for which we take $\mu_e = 2$ (carbon--oxygen composition)
+\cite{Chandrasekhar1939,HamadaSalpeter1961}. White dwarfs form a
+one-parameter family in central density: for each $\rho_c$,
+$a^2 = (n{+}1)K\rho_c^{1/n-1}/4\pi G$, $R = a\,\xi_1$, and
+$M = 4\pi a^3\rho_c\!\int\!\xi^2\theta^n d\xi$.
+
+The non-relativistic approximation becomes inadequate as the electron
+Fermi momentum approaches relativistic values, at
+$\rho \sim 2\times10^{6}~{\rm g\,cm^{-3}}$ for $\mu_e=2$.
+The retained numerical grid spans
+$\rho_c \in [10^5,3\times10^6]~{\rm g\,cm^{-3}}$, with standard-model
+mass labels $M_0\simeq0.16$--$0.86M_\odot$. Its upper portion therefore
+extends beyond that estimate and must be read as a mathematical
+polytrope comparison, not a controlled non-relativistic stellar prediction.
+There is no solar-style mass or radius recalibration: $K$, $\mu_e$,
+and the input central density are held fixed in each pair. Finite-temperature,
+Coulomb, and envelope corrections are neglected; all results are differential
+(modified vs.\ standard model at identical $\rho_c$ and EOS), which
+does not establish cancellation of these inadequacies in the response. Because the $n = 3/2$
+mass--density relation $M \propto \rho_c^{1/2}$ is monotonic with no
+maximum, this framework makes \emph{no} statement about the Chandrasekhar
+mass; a meaningful $M_{\rm Ch}$ analysis requires the relativistic
+equation of state and is outside this calculation.
+
+\subsection{Observable convention}
+
+White dwarf tests compare radii at fixed mass. With the standard
+$n = 3/2$ relation $d\ln R/d\ln M = -1/3$, the fixed-mass radius shift
+can be written using the fixed-$\rho_c$ shifts as
+\begin{equation}
+\Delta\ln R\big|_M = \Delta\ln R\big|_{\rho_c}
++ \tfrac{1}{3}\,\Delta\ln M\big|_{\rho_c}.
+\label{eq:fixedM}
+\end{equation}
+This identity is exact for comparison at the modified mass $M_A(\rho_c)$:
+$R_0(M)\propto M^{-1/3}$ implies
+$\Delta\ln R|_M=\ln[R_A(\rho_c)/R_0(M_A(\rho_c))]$.
+It is not merely a first-order correction within this polytropic model.
+The archived figure used $M_0(\rho_c)$ as its horizontal label; the new figure uses $M_A(\rho_c)$.
+A comparison at that baseline target mass requires solving for a different
+modified central density. In six audited examples this changes the log
+radius shift by at most $1.6\times10^{-5}$.
+The exact fractional shift is $\exp(\Delta\ln R|_M)-1$.
+
+%============================================================================
+\section{Numerical implementation and validation}
+The new propagation uses the flux-form implementation audited against the
+stated operator in the preceding consistency review. With
+\begin{equation}
+\begin{gathered}
+w=\xi^{2+\delta(\theta)},\quad q=-w\theta',\\
+\theta'=-q/w,\quad q'=w\theta^{3/2},\quad I'=\xi^2\theta^{3/2},
+\end{gathered}
+\end{equation}
+we integrate ordinary mass as an ODE state. Weighted flux $q$ is not
+ordinary matter mass for $A\ne0$. The full density law is retained without
+suppressing its derivative near the surface. RK45 uses relative/absolute
+tolerances $2\times10^{-11}/2\times10^{-13}$, maximum step .01 and
+central start $\xi_0=10^{-6}$. Regular seeds are
+$\theta=1-\xi_0^2/[2(3+\delta_c)]$,
+$q=\xi_0^{3+\delta_c}/(3+\delta_c)$ and $I=\xi_0^3/3$.
+Solver success, a terminal surface and finite outputs are required.
+
+The null reproduces $\xi_1=3.6537537362$ and $I=2.7140551222$.
+The earlier audit reproduced all 108 archived paired models using this
+independently transcribed flux system. It also checked analytic mass/radius
+scalings, unit changes and central-start convergence. Its strict replay
+comparison with the old production archive missed a $2\times10^{-8}$
+criterion (difference $6.42\times10^{-8}$), and four tightened derivative-
+cutoff production solves failed. Those historical issues are retained;
+the new run does not silently repair or relabel the archived data.
+
+The new inputs are all 65 source-precision solar-a endpoints plus the local
+solar-envelope peak, with amplitudes at fractions $0,.25,.5,.75,1$ of each
+endpoint. Each is evaluated at 12 logarithmic central densities between
+$10^5$ and $3\times10^6~{\rm g\,cm^{-3}}$. All 3960 model rows complete.
+At 12 selected boundary/density pairs, tightening the flux solver by ten
+and reducing the maximum step to .003 changes the exact fractional radius
+shift by at most $2.78\times10^{-10}$; moving the central start to $10^{-4}$
+changes it by at most $8.05\times10^{-11}$. No negative-sign requirement
+is used to accept a model. These comparisons support the sampled effect
+size; they do not validate the EOS approximation or prove domain extrema.
+
+\section{Results}
+%============================================================================
+
+\subsection{Sampled conditional signatures}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.94\textwidth]{radius_shifts.pdf}
+\caption{Selected curves from the 66 nominal solar-a boundary points.
+The abscissa is the actual modified comparison mass $M_A(\rho_c)$; the
+ordinate is the exact percentage shift $100[\exp(\Delta\ln R|_{M_A})-1]$.
+Square markers identify $\rho_c>2\times10^6~{\rm g\,cm^{-3}}$, beyond
+the stated non-relativistic EOS estimate. The curves are polytropic samples,
+not certified continuous-domain bounds or measured white-dwarf deficits.}
+\label{fig:bands}
+\end{figure*}
+The largest sampled magnitude over the 3960 models is
+\begin{equation}
+\left.\frac{\Delta R}{R}\right|_{M_A}=-.009549333,
+\end{equation}
+at $\alpha=.5$, $A=.006734928$, $\rho_c=3\times10^6~{\rm g\,cm^{-3}}$
+and $M_A=.84832117M_\odot$. The standard mass at that input density is
+$.85925632M_\odot$, illustrating why the mass-coordinate correction matters.
+The entire boundary set spans comparison masses $.15502$--$.85539M_\odot$.
+The largest-deficit point is a mathematical high-density polytrope example,
+not a controlled non-relativistic prediction for a real white dwarf.
+\begin{table}[t]
+\centering
+\caption{Selected boundary samples at $\rho_c=3\times10^6~{\rm g\,cm^{-3}}$.
+The last column is an exact percentage shift at $M_A$, not a log shift.
+All rows in this table exceed the non-relativistic applicability estimate.}
+\input{boundary_table.tex}
+\label{tab:boundary}
+\end{table}
+At every sampled exponent and density the radius shift decreases over the
+five amplitude fractions; the largest sampled magnitude occurs at a boundary
+point. This is a finite-grid observation, not a proof of monotonicity between
+samples or over all accepted parameters. The zero-amplitude models have zero
+shift and arbitrarily small effects remain permitted. The new numbers come
+from the revised solar region, rather than rescaling the older .95\% example.
+
+The curves vary moderately with mass under this polytropic prescription.
+That behavior does not follow from saturation over the full exponent range:
+small-exponent models remain appreciably unsaturated at white-dwarf densities.
+The full density law and its operator contribution are retained.
+
+\subsection{Sign and physical interpretation}
+
+The reported sampled models have radius deficits at fixed mass.
+The term $(2+\delta)/\xi$ alone does not prove a universal sign because
+$\delta'\ln\xi$ and calibration also contribute. Paper~I holds the
+physical solar radius fixed and shows both signs of the shift in
+$\xi_1$; it does not establish a physical solar contraction. V4's force
+multiplier $F=(d_{\rm eff}-1)/2$ is a different prescription. A sign
+change between prescriptions is not by itself a validation criterion.
+
+\subsection{Why the V4 results were invalid}
+\label{sec:v4}
+
+For the record, the V4 implementation failed independently of the ansatz
+choice: (i)~it set the polytropic constant $K = 1$ in cgs units, making
+its model stars $\sim$10~m objects ($R = 430$--$926$~cm over the scanned
+densities); (ii)~it began integration at $r_0 = 10^3$~cm---\emph{outside}
+those stars---seeding the integration with a uniform-density sphere that
+dominated the result (computed masses 9--79$\times$ the analytic values,
+and mass--radius scalings inconsistent with $R \propto M^{-1/3}$);
+(iii)~its ``Chandrasekhar mass shifts'' were maxima over a scan grid of a
+monotonic $M(\rho_c)$ relation---the $n = 3/2$ polytrope has no maximum
+mass---and so measured the grid edge, not physics. The validation gates
+of this version were designed directly against these failure modes.
+
+%============================================================================
+\section{Discussion}
+%============================================================================
+
+\subsection{Observability}
+
+The mathematical sampled scale of roughly one percent can be compared with the precision of
+white dwarf mass--radius measurements. Eclipsing double-lined binaries
+deliver model-independent masses and radii at the 1--2\% level
+\cite{Parsons2017}, and \emph{Gaia} parallaxes constrain the
+photometric mass--radius relation for large samples
+\cite{Tremblay2017,Fontaine2001}. Two practical points temper the test.
+First, the sampled deficit varies moderately with mass and can be
+degenerate with global systematics of the mass--radius relation
+(composition, envelope thickness, finite temperature) rather than
+appearing as a distinctive shape; distinguishing it requires either
+absolute accuracy at the few$\times10^{-3}$ level or a composition- and
+temperature-controlled differential sample. Second, these reported sample scales are not lower bounds: the model
+permits arbitrarily small shifts.
+A quantitative exclusion or detection forecast requires composition,
+thermal and envelope uncertainties, correlated measurement errors, and
+checked modified stellar responses within the specified EOS and structure assumptions. A null sample does not automatically
+provide a stronger bound than the solar proxy.
+
+\subsection{Relation to the series}
+
+The Sun supplies a conditional model/proxy threshold. White dwarfs
+and neutron stars probe different structural and relativistic assumptions;
+sharing a density law alone neither validates their responses nor removes
+EOS degeneracy. Saturation and sign must be checked over the actual domain.
+
+%============================================================================
+\section{Conclusions}
+The revised nominal solar-a sets produce sampled fixed-mass radius deficits
+up to .954933\% in the $n=3/2$ model. The new figure uses $M_A$ and exact
+fractional shifts. Sampling interior amplitude fractions supports a monotonic
+trend on the tested grid, but does not certify a global continuum envelope.
+The largest-deficit point exceeds the non-relativistic applicability estimate;
+realistic EOS, thermal, composition and envelope responses remain separate tasks.
+
+The flux-form numerical checks support the size of these conditional model
+responses. V4's quantitative results remain superseded, and this polytrope
+has no Chandrasekhar maximum. No detection, guaranteed observational sensitivity
+or calibrated white-dwarf confidence bound is inferred from the solar proxy.
+
+\section*{Code and revision availability}
+Producing scripts, inputs, saved results and numerical audit evidence are
+publicly available in the \href{https://github.com/chrismerrill1974/whitedwarfs_code}{White Dwarfs code repository}.
+The accompanying source package, \nolinkurl{whitedwarfs_code}, includes the
+manuscript, dependencies and resource-controlled reproduction commands.
+Its \texttt{reproduction/CAPSULE.json} records file hashes;
+\texttt{reproduce.py} verifies the package and rebuilds the paper from retained
+scientific outputs. Full scientific runs are separate from this saved-result
+reproduction. Historical scripts and results remain separately identified.
+
+\section*{Acknowledgments}
+
+This consistency revision was developed with computational collaboration
+from Astra (Open AI) and Claude (Anthropic). The superseded V4 analysis
+informed the failure-detection gates used here. We thank the developers of
+\texttt{numpy}, \texttt{scipy}, and \texttt{matplotlib}.
+
+%============================================================================
+\begin{thebibliography}{9}
+%============================================================================
+
+\bibitem{PaperI} C.~K.~Merrill, Claude (Anthropic), and Astra (Open AI),
+``Radial Dimensionality Theory I: Solar Neutrino and Helioseismic Constraints on Density-Dependent Spatial Dimensionality,''
+revised version, November 12, 2026.
+
+\bibitem{Chandrasekhar1939}
+S.~Chandrasekhar,
+\emph{An Introduction to the Study of Stellar Structure}
+(University of Chicago Press, Chicago, 1939).
+
+\bibitem{HamadaSalpeter1961}
+T.~Hamada and E.~E.~Salpeter,
+``Models for zero-temperature stars,''
+Astrophys. J. \textbf{134}, 683 (1961).
+
+\bibitem{Parsons2017}
+S.~G.~Parsons \textit{et al.},
+``Testing the white dwarf mass--radius relationship with eclipsing
+binaries,''
+Mon. Not. R. Astron. Soc. \textbf{470}, 4473 (2017).
+
+\bibitem{Tremblay2017}
+P.-E.~Tremblay \textit{et al.},
+``The Gaia DR1 mass--radius relation for white dwarfs,''
+Mon. Not. R. Astron. Soc. \textbf{465}, 2849 (2017).
+
+\bibitem{Fontaine2001}
+G.~Fontaine, P.~Brassard, and P.~Bergeron,
+``The potential of white dwarf cosmochronology,''
+Publ. Astron. Soc. Pac. \textbf{113}, 409 (2001).
+
+\end{thebibliography}
+
+\end{document}

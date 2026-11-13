@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the primary paper and this pinned source revision."
+title: "RDT consistency source package: whitedwarfs_code"
+version: "paper2-v6-publication-2026-11-12"
+authors:
+  - family-names: Merrill
+    given-names: Christopher K.
+  - name: "Claude (Anthropic)"
+  - name: "Astra (Open AI)"
+repository-code: "https://github.com/chrismerrill1974/whitedwarfs_code"
