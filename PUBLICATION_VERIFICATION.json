@@ -109,6 +109,8 @@
       "BLIS_NUM_THREADS": "1"
     }
   },
-  "capsule_sha256": "39ed061a84c44d16321724b634880c61ebf8d7a553c75c701a8e21756ca55605",
-  "paper2_pdf_sha256": "c5ca00dabdbf3ec5f88de0e86e25db88f90bbe0a1e9cf49e1f6bb1233ddfe73a"
+  "capsule_sha256": "ced89fabc70d165dbb626bcf8ec9308e3e2a569b9b42f24b1e9d546f6ca7e053",
+  "paper2_pdf_sha256": "c5ca00dabdbf3ec5f88de0e86e25db88f90bbe0a1e9cf49e1f6bb1233ddfe73a",
+  "artifact_filename": "merrill_white_dwarf_stars_v6_10.5281_zenodo.24184274.pdf",
+  "verification_note": "DOI filename updated without changing the verified PDF bytes."
 }

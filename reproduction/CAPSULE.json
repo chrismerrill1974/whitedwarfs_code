@@ -1,5 +1,5 @@
 {
-  "tag": "paper2-v6-publication-2026-11-12",
+  "tag": "paper2-v6-zenodo-24184274",
   "scientific_input_commit": "f4cff7fbcbd795e876c2e0232dbde5a73637a9d7",
   "scope": "Paper II scientific source, inputs, saved results and numerical controls, with shared scientific dependencies and historical calculations.",
   "sha256": {
@@ -124,7 +124,6 @@
     "legacy_companion/companion_alpha1_bound.py": "4f5fef574fb134d2b406be13ebbfce2cf18b6fee5bd77b560af3c70b61b18013",
     "legacy_companion/solar_model.py": "8ade362e1549a2737bec97cf711d9acc1ea8991b3a1f4a7b500d0c4d8c07eae9",
     "numerical_guardrails.py": "59d137e9879222facc737bd7560649c53f813d00740c5e46bfc587edc3e3b54e",
-    "output/pdf/publication/paper2/merrill_white_dwarf_stars_v6.pdf": "c5ca00dabdbf3ec5f88de0e86e25db88f90bbe0a1e9cf49e1f6bb1233ddfe73a",
     "paper1_SolarCore/solar_step11/README.md": "6746992b8896e5785fb47dcdca99101a4ada718125771f3a260fdbf804dd9b63",
     "paper1_SolarCore/solar_step11/audit.py": "5caaa1dac6c136280d8769220861e54d1097c5e495e659d20280fce214b1f2d2",
     "paper1_SolarCore/solar_step11/inference.py": "b5011e0f2a63cb45550705a6cd796ab37d65a53387a663bfb0bc02cce13a52af",
@@ -373,6 +372,7 @@
     "paper6/terrestrial_G_note/material_table.tex": "1369ebc338b5c2b25272ad21d9bf49823c3cb7197e542923f8ee73ff3735ecaf",
     "paper6/u_sigma.py": "38d5a3687ca89bf1012ed95463e6a19b2e2bdef09af63e0b563cbf59051b52b2",
     "tests/test_step10_guardrails.py": "e9df20b1276f697c97339be5511bf0bfa0b02f53039822b7785250a21eaf8569",
-    "tests/test_step11_inference.py": "468966e6a521182bd38461779a27dabb224868a10e2ba15f8e8fb0be04620eaf"
+    "tests/test_step11_inference.py": "468966e6a521182bd38461779a27dabb224868a10e2ba15f8e8fb0be04620eaf",
+    "output/pdf/publication/paper2/merrill_white_dwarf_stars_v6_10.5281_zenodo.24184274.pdf": "c5ca00dabdbf3ec5f88de0e86e25db88f90bbe0a1e9cf49e1f6bb1233ddfe73a"
   }
 }

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Cite the primary paper and this pinned source revision."
 title: "RDT consistency source package: whitedwarfs_code"
-version: "paper2-v6-publication-2026-11-12"
+version: "paper2-v6-zenodo-24184274"
 authors:
   - family-names: Merrill
     given-names: Christopher K.

@@ -4,9 +4,9 @@ Producing scripts, inputs, saved results and numerical controls for
 **Radial Dimensionality Theory II: White Dwarf Structure under Solar-Constrained
 Density-Dependent Dimensionality**.
 
-Source release: `paper2-v6-publication-2026-11-12`.
+Source release: `paper2-v6-zenodo-24184274`.
 
-- [Paper](reproduction/output/pdf/publication/paper2/merrill_white_dwarf_stars_v6.pdf)
+- [Paper](reproduction/output/pdf/publication/paper2/merrill_white_dwarf_stars_v6_10.5281_zenodo.24184274.pdf)
 - [Manuscript](reproduction/paper2_WhiteDwarfs/V5_Paper/main.tex)
 - [Current calculation and figure generation](reproduction/paper2_WhiteDwarfs/wd_step12/README.md)
 
@@ -19,7 +19,7 @@ nice/setpriority, SIGPROF and SIGSTOP/SIGCONT.
 ```sh
 git clone https://github.com/chrismerrill1974/whitedwarfs_code.git
 cd whitedwarfs_code
-git checkout paper2-v6-publication-2026-11-12
+git checkout paper2-v6-zenodo-24184274
 nice -n 19 python3 reproduce.py --output /tmp/whitedwarfs-reproduction
 ```
 
